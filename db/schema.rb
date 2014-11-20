@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120195327) do
+ActiveRecord::Schema.define(version: 20141120215233) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -59,6 +59,29 @@ ActiveRecord::Schema.define(version: 20141120195327) do
     t.string   "credit_card_type_id"
     t.integer  "credit_card_exp_month"
     t.integer  "credit_card_exp_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.integer  "product_id"
+    t.string   "product_name"
+    t.string   "product_description"
+    t.decimal  "unit_price"
+    t.decimal  "retail_price"
+    t.integer  "stock_quantity"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
+
+  create_table "provinces", force: true do |t|
+    t.integer  "province_id"
+    t.string   "province_name"
+    t.decimal  "gst_rate"
+    t.decimal  "pst_rate"
+    t.decimal  "hst_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
